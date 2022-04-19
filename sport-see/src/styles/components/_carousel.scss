@@ -1,0 +1,57 @@
+.carousel {
+    margin: 0 5%;
+    & .images {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        height: 415px;
+        overflow: hidden;
+
+        & img {
+            width: inherit;
+        }
+        @media screen and (max-width: 768px) {
+            width: auto;
+            height: 355px;
+        }
+    }
+
+    & .actions {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+
+        & .next,
+        .previous {
+            font-size: 5rem;
+            color: white;
+            position: relative;
+            bottom: 250px;
+            margin: 0 10px;
+
+            &:hover {
+                color: #ff6060;
+                text-shadow: 2px 2px 4px black;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 3rem;
+                bottom: 205px;
+            }
+        }
+
+        & .currentCount {
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            bottom: 50px;
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+}

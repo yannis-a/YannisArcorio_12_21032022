@@ -1,0 +1,16 @@
+.rating {
+    text-align: end;
+
+    & i {
+        font-size: x-large;
+        margin: 5px;
+        color: #e3e3e3;
+        @media screen and (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+
+    & .fill {
+        color: #ff6060;
+    }
+}

@@ -1,0 +1,23 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/keyframes";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./components/footer";
+@import "./components/header";
+@import "./components/cardText";
+@import "./components/logo";
+@import "./components/menu";
+@import "./components/cards";
+@import "./components/tags";
+@import "./components/carousel";
+@import "./components/user";
+@import "./components/rating";
+
+
+@import "./pages/lodging";
+@import "./pages/notFound";
+

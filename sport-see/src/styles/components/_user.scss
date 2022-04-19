@@ -1,0 +1,33 @@
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    & .name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 142.6%;
+        text-align: right;
+        color: #ff6060;
+
+        @media screen and (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+    & .picture {
+        margin: 10px 0 10px 10px;
+        border-radius: 50%;
+        overflow: hidden;
+        height: 64px;
+        width: 64px;
+        & img {
+            height: 100%;
+            width: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

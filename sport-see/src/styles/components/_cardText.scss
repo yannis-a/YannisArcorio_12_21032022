@@ -1,0 +1,32 @@
+.cardText {
+    margin: 31px 15%;
+    @media screen and (max-width: 768px) {
+        margin: 26px 5%;
+        font-size: 14px;
+    }
+    & div:nth-child(1) {
+        margin: 0;
+        padding: 6px 18px;
+        color: white;
+        background-color: #ff6060;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & div:nth-child(2) {
+        z-index: -1;
+        position: relative;
+        top: -20px;
+        padding: 36px 18px 19px 18px ;
+        margin: 0;
+        border-radius: 5px;
+        background: #f6f6f6;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1em;
+        line-height: 142.6%;
+        color: #FF6060;
+    }
+}
