@@ -14,6 +14,11 @@ import {
   USER_PERFORMANCE,
 } from "./mockData.js";
 
+/**
+ * gets the data of user 
+ * @param {int} userId 
+ * @returns json object
+ */
 export async function getUserMainData(userId) {
   let response;
   if (USE_API) {
@@ -24,6 +29,11 @@ export async function getUserMainData(userId) {
   return response;
 }
 
+/**
+ * gets the data of activity 
+ * @param {int} userId 
+ * @returns json object
+ */
 export async function getUserActivity(userId) {
   let response;
   if (USE_API) {
@@ -34,6 +44,11 @@ export async function getUserActivity(userId) {
   return response;
 }
 
+/**
+ * gets the data of averrage sessions 
+ * @param {int} userId 
+ * @returns json object
+ */
 export async function getUserAverageSessions(userId) {
   let response;
   if (USE_API) {
@@ -44,6 +59,11 @@ export async function getUserAverageSessions(userId) {
   return response;
 }
 
+/**
+ * gets the data of performance 
+ * @param {int} userId 
+ * @returns json object
+ */
 export async function getUserPerformance(userId) {
   let response;
   if (USE_API) {
