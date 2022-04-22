@@ -1,6 +1,11 @@
 import React from "react";
 import ProfilHeader from "../components/ProfilHeader";
-import { useState,useEffect } from "react";
+import ProfilWeight from "../components/ProfilWeight";
+import ProfilObjectifs from "../components/ProfilObjectifs";
+import ProfilRadar from "../components/ProfilRadar";
+import ProfilKpi from "../components/ProfilKpi";
+import ProfilCal from "../components/ProfilCal";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getUserInformation } from "../services/userInfoService";
 
@@ -11,7 +16,6 @@ const Profil = () => {
   useEffect(() => {
     async function getData() {
       setUserInfo(await getUserInformation(id));
-        
     }
 
     getData();
@@ -20,11 +24,11 @@ const Profil = () => {
   return (
     <div className="profil">
       <ProfilHeader data={userInfos} />
-      <div className="weight"></div>
-      <div className="objectifs"></div>
-      <div className="radar"></div>
-      <div className="kpi"></div>
-      <div className="cal"></div>
+      <ProfilWeight />
+      <ProfilObjectifs />
+      <ProfilRadar />
+      <ProfilKpi />
+      <ProfilCal />
     </div>
   );
 };

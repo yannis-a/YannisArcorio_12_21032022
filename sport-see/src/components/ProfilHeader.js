@@ -6,7 +6,7 @@ const profilHeader = ({ data }) => {
       <h1>
         {data.firstName} {data.lastName}
       </h1>
-      <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      <div>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
     </div>
   );
 };
