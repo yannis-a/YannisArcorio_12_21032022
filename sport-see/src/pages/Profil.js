@@ -8,14 +8,17 @@ import ProfilCal from "../components/ProfilCal";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getUserInformation } from "../services/userInfoService";
+import { getActivity } from "../services/userActivity";
 
 const Profil = () => {
   const { id } = useParams();
   const [userInfos, setUserInfo] = useState({});
+  const [activity, setActivity] = useState({});
 
   useEffect(() => {
     async function getData() {
       setUserInfo(await getUserInformation(id));
+      setActivity(await getActivity(id));
     }
 
     getData();
@@ -24,7 +27,7 @@ const Profil = () => {
   return (
     <div className="profil">
       <ProfilHeader data={userInfos} />
-      <ProfilWeight />
+      <ProfilWeight data={activity} />
       <ProfilObjectifs />
       <ProfilRadar />
       <ProfilKpi />
