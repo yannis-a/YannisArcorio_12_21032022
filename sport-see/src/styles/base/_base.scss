@@ -6,17 +6,11 @@
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    position: relative;
+    color: inherit !important;
 }
 
-.open {
-    display: block;
-}
-
-.close {
-    display: none;
+ol, ul, dl {
+    margin-bottom: 0 !important;
 }
 
 .mb {

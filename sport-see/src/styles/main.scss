@@ -8,16 +8,12 @@
 
 @import "./components/footer";
 @import "./components/header";
-@import "./components/cardText";
 @import "./components/logo";
 @import "./components/menu";
-@import "./components/cards";
-@import "./components/tags";
-@import "./components/carousel";
-@import "./components/user";
-@import "./components/rating";
+@import "./components/rechart";
 
 
-@import "./pages/lodging";
+@import "./pages/profil";
 @import "./pages/notFound";
 
+@import "~bootstrap/scss/bootstrap";
