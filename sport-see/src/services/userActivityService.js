@@ -1,6 +1,6 @@
-import { getUserActivity } from "../services/dataService.js";
+import { getUserActivity } from "./dataService.js";
 
-export async function getActivity(id) {
+export async function getActivityData(id) {
   let res = [];
   try {
     const data = await getUserActivity(id);

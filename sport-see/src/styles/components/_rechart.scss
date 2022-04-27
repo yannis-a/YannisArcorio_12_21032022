@@ -1,3 +1,15 @@
-.weight{
-    background-color: #FBFBFB;
+.activity {
+    position: relative;
+    & .title {
+        position: absolute;
+        top: 5px;
+        left: 30px;
+        z-index: 1;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    & div svg {
+        background-color: #fbfbfb;
+    }
 }

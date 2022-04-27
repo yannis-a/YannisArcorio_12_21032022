@@ -1,11 +1,10 @@
 import { getUserMainData } from "../services/dataService.js";
 
-export async function getUserInformation(id) {
+export async function getNutritionData(id) {
   let res;
   try {
     const data = await getUserMainData(id);
-    console.log(data)
-    res = data.data.userInfos;
+    res = data.data.keyData;
   } catch (err) {
     console.error(err);
   }

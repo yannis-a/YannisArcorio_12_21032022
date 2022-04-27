@@ -15,8 +15,8 @@ import {
 } from "./mockData.js";
 
 /**
- * gets the data of user 
- * @param {int} userId 
+ * gets the data of user
+ * @param {int} userId
  * @returns json object
  */
 export async function getUserMainData(userId) {
@@ -24,14 +24,18 @@ export async function getUserMainData(userId) {
   if (USE_API) {
     response = await apiCall(ROUTE_MAIN_DATA, userId);
   } else {
-    response = USER_MAIN_DATA;
+    response = {
+      data: USER_MAIN_DATA.filter(
+        (item) => Number(item.id) === Number(userId)
+      )[0],
+    };
   }
   return response;
 }
 
 /**
- * gets the data of activity 
- * @param {int} userId 
+ * gets the data of activity
+ * @param {int} userId
  * @returns json object
  */
 export async function getUserActivity(userId) {
@@ -39,14 +43,18 @@ export async function getUserActivity(userId) {
   if (USE_API) {
     response = await apiCall(ROUTE_ACTIVITY, userId);
   } else {
-    response = USER_ACTIVITY;
+    response = {
+      data: USER_ACTIVITY.filter(
+        (item) => Number(item.userId) === Number(userId)
+      )[0],
+    };
   }
   return response;
 }
 
 /**
- * gets the data of averrage sessions 
- * @param {int} userId 
+ * gets the data of averrage sessions
+ * @param {int} userId
  * @returns json object
  */
 export async function getUserAverageSessions(userId) {
@@ -54,14 +62,18 @@ export async function getUserAverageSessions(userId) {
   if (USE_API) {
     response = await apiCall(ROUTE_AVERAGE_SESSIONS, userId);
   } else {
-    response = USER_AVERAGE_SESSIONS;
+    response = {
+      data: USER_AVERAGE_SESSIONS.filter(
+        (item) => Number(item.userId) === Number(userId)
+      )[0],
+    };
   }
   return response;
 }
 
 /**
- * gets the data of performance 
- * @param {int} userId 
+ * gets the data of performance
+ * @param {int} userId
  * @returns json object
  */
 export async function getUserPerformance(userId) {
@@ -69,7 +81,11 @@ export async function getUserPerformance(userId) {
   if (USE_API) {
     response = await apiCall(ROUTE_PERFORMANCE, userId);
   } else {
-    response = USER_PERFORMANCE;
+    response = {
+      data: USER_PERFORMANCE.filter(
+        (item) => Number(item.userId) === Number(userId)
+      )[0],
+    };
   }
   return response;
 }

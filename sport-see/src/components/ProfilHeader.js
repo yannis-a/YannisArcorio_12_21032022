@@ -4,7 +4,7 @@ const profilHeader = ({ data }) => {
   return (
     <div className="header">
       <h1>
-        {data.firstName} {data.lastName}
+        Bonjour <span>{data.firstName}</span>
       </h1>
       <div>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
     </div>
