@@ -6,7 +6,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 /**
@@ -37,21 +38,27 @@ const ProfilActivity = ({ data }) => {
   return (
     <div className="activity">
       <div className="title">Activité quotidienne</div>
-      <BarChart width={730} height={250} data={data} barSize={7} Label="coucou">
-        <CartesianGrid strokeDasharray="2 1" vertical={false} />
-        <XAxis dataKey="day" axisLine={false} tickLine={false} />
-        <YAxis orientation="right" axisLine={false} tickLine={true}  />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend
-          verticalAlign="top"
-          height={36}
-          align="right"
-          iconType="circle"
-          formatter={FormattedLegend}
-        />
-        <Bar dataKey="kilogram" fill="#282D30" />
-        <Bar dataKey="calories" fill="#E60000" />
-      </BarChart>
+      <ResponsiveContainer width="100%" height={260}>
+        <BarChart
+          data={data}
+          barSize={7}
+          Label="coucou"
+        >
+          <CartesianGrid strokeDasharray="2 1" vertical={false} />
+          <XAxis dataKey="day" axisLine={false} tickLine={false} />
+          <YAxis orientation="right" axisLine={false} tickLine={true} />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend
+            verticalAlign="top"
+            height={36}
+            align="right"
+            iconType="circle"
+            formatter={FormattedLegend}
+          />
+          <Bar dataKey="kilogram" fill="#282D30" />
+          <Bar dataKey="calories" fill="#E60000" />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

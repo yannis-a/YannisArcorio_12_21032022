@@ -17,33 +17,48 @@ import { getObjectifsData } from "../services/userObjectifsService";
 const Profil = () => {
   const { id } = useParams();
   const [userData, setUserData] = useState({});
-  const [activityData, setActivityData] = useState({});
-  const [objectifsData, setObjectifsData] = useState({});
-  const [radarData, setRadarData] = useState({});
+  const [activityData, setActivityData] = useState([]);
+  const [objectifsData, setObjectifsData] = useState([]);
+  const [radarData, setRadarData] = useState([]);
   const [scoreData, setScoreData] = useState({});
-  const [nutritionData, setNutritionData] = useState({});
+  const [nutritionData, setNutritionData] = useState([]);
 
   useEffect(() => {
-    async function getData() {
+    const getnutrition = async () => {
+      setNutritionData(await getNutritionData(id));
+    };
+
+    getnutrition().catch(console.error);
+  }, [id]);
+  
+  useEffect(() => {
+    const getData = async () => {
       setUserData(await getUserInformation(id));
       setActivityData(await getActivityData(id));
       setObjectifsData(await getObjectifsData(id));
       setRadarData(await getRadarData(id));
       setScoreData(await getScoreData(id));
-      setNutritionData(await getNutritionData(id));
-    }
+    };
 
-    getData();
+    getData().catch(console.error);
   }, [id]);
 
   return (
     <div className="profil">
       <ProfilHeader data={userData} />
-      <ProfilActivity data={activityData} />
-      <ProfilObjectifs data={objectifsData} />
-      <ProfilRadar data={radarData}/>
-      <ProfilScore data={scoreData}/>
-      <ProfilNutrition data={nutritionData}/>
+      <div className="graphs">
+        <div>
+          <ProfilActivity data={activityData} />
+        </div>
+        <div>
+          <ProfilObjectifs data={objectifsData} />
+          <ProfilRadar data={radarData} />
+          <ProfilScore data={scoreData} />
+        </div>
+        <div>
+          <ProfilNutrition data={nutritionData} />
+        </div>
+      </div>
     </div>
   );
 };
