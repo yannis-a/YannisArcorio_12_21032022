@@ -34,9 +34,10 @@
         align-items: center;
         justify-content: center;
         top:0;
+        z-index: 1;
 
         & img {
-            margin: 10px 40px;
+            margin: 10px 20px;
             width: 50px;
         }
 

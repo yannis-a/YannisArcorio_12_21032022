@@ -5,8 +5,8 @@ const ProfilObjectifs = ({ data }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active) {
       return (
-        <div className="bg-white p-2 rounded-md">
-          <p className="font-medium text-xs">{payload[0].value}min</p>
+        <div className="bg-white p-2">
+          <p>{payload[0].value}min</p>
         </div>
       );
     }
@@ -16,11 +16,12 @@ const ProfilObjectifs = ({ data }) => {
 
   return (
     <div className="objectifs">
-      <ResponsiveContainer width="100%" height={260}>
+      <div className="title">Durée moyenne des sessions</div>
+      <ResponsiveContainer width="100%">
         <LineChart
           data={data}
           margin={{
-            top: 65,
+            top: 60,
             right: 20,
             left: 20,
             bottom: 10,
@@ -30,7 +31,7 @@ const ProfilObjectifs = ({ data }) => {
             dataKey="axeX"
             axisLine={false}
             tickLine={false}
-            stroke="#000"
+            stroke="#fff"
           />
           <Tooltip content={<CustomTooltip />} />
           <Line

@@ -2,18 +2,18 @@ import React from "react";
 import { PieChart, Pie } from "recharts";
 
 const ProfilScore = ({ data }) => {
-  
+  console.log(data);
   return (
     <div className="score">
-      <PieChart width={730} height={250}>
+      <PieChart width="100%">
         <Pie
-          data={0.5}
+          data={data}
           dataKey="value"
-          innerRadius={90}
-          outerRadius={100}
-          startAngle={90}
-          endAngle={450}
-          strokeWidth="2"
+          cx="50%"
+          cy="50%"
+          innerRadius={100}
+          outerRadius={150}
+          fill="#82ca9d"
         />
       </PieChart>
     </div>

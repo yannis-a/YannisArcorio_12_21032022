@@ -71,18 +71,14 @@ const Profil = () => {
       <ProfilHeader data={userData} />
       <div className="graphs">
         <div>
-          <div>
-            <ProfilActivity data={activityData} />
-          </div>
+          <ProfilActivity data={activityData} />
           <div>
             <ProfilObjectifs data={objectifsData} />
             <ProfilRadar data={radarData} />
             <ProfilScore data={scoreData} />
           </div>
         </div>
-        <div>
-          <ProfilNutrition data={nutritionData} />
-        </div>
+        <ProfilNutrition data={nutritionData} />
       </div>
     </div>
   );

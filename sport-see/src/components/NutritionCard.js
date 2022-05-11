@@ -3,9 +3,7 @@ import React from "react";
 const NutritionCard = ({ data }) => {
   return (
     <div className="nutritionCard">
-      <span>
-        <img src={data.src} alt={data.text} />
-      </span>
+      <img src={data.src} alt={data.text} />
       <div>
         <span>{data.value}</span>
         <span>{data.text}</span>

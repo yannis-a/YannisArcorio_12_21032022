@@ -1,5 +1,7 @@
 .activity {
     position: relative;
+    padding: 0 10px 10px 0;
+
     & .title {
         position: absolute;
         top: 5px;
@@ -11,5 +13,61 @@
 
     & div svg {
         background-color: #fbfbfb;
+        border-radius: 5px;
+    }
+}
+
+.objectifs {
+    margin: 30px 30px 0 0;
+    height: 290px;
+    position: relative;
+
+    @media screen and (max-width: 1200px) {
+        height: 200px;
+    }
+
+    & div svg {
+        background-color: #ff0000;
+        border-radius: 5px;
+    }
+
+    & .title {
+        color: white;
+        position: absolute;
+        top: 25px;
+        z-index: 1;
+        padding-left: 20%;
+        font-size: small;
+        width: 200px;
+    }
+}
+
+.score {
+    margin: 30px 30px 0 0;
+    height: 290px;
+
+    @media screen and (max-width: 1200px) {
+        height: 200px;
+    }
+
+    & div svg {
+        background-color: #ff0000;
+        border-radius: 5px;
+        color: white;
+    }
+}
+
+.radar {
+    margin: 30px 30px 0 0;
+    height: 290px;
+
+    @media screen and (max-width: 1200px) {
+        height: 200px;
+    }
+
+    & div svg {
+        background-color: #282d30;
+        border-radius: 5px;
+        color: white;
     }
 }

@@ -38,7 +38,7 @@ const ProfilActivity = ({ data }) => {
   return (
     <div className="activity">
       <div className="title">Activité quotidienne</div>
-      <ResponsiveContainer width="100%" height={260}>
+      <ResponsiveContainer height={260}>
         <BarChart
           data={data}
           barSize={7}

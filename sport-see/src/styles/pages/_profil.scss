@@ -1,6 +1,6 @@
 .profil {
-    margin-left: 200px;
-    padding-top: 120px;
+    padding: 120px 0 0 120px;
+    width: auto;
 
     & .header {
         display: flex;
@@ -17,21 +17,25 @@
         }
     }
 
-    & .graphs{
+    & .graphs {
         display: flex;
-        padding-right: 200px;
 
-        & > div:nth-child(1){
-            flex: 2 1 auto;
-        }
-        
-        & > div:nth-child(2){
-            flex: 1 1 auto;
-            padding: 0 31px;
+        & > div:nth-child(1) {
+            width: 66%;
 
-            & .nutritions{
-                height: 100%;
+            & > div:nth-child(2) {
+                display: flex;
+                justify-content: space-between;
+
+                & > div {
+                    width: 33%;
+                }
             }
+        }
+
+        & .nutritions{
+            padding-left: 30px;
+            width: 33%;
         }
     }
 }
