@@ -1,5 +1,10 @@
 import { getUserMainData } from "../services/dataService.js";
 
+/**
+ * format nutrition data 
+ * @param {int} id 
+ * @returns formatted data
+ */
 export async function getNutritionData(id) {
   let res;
   try {
@@ -15,19 +20,19 @@ export async function getNutritionData(id) {
         id: 1,
         value: `${data.data.keyData.proteinCount}g`,
         text: "Protéines",
-        icon: "/img/protein-icon.png",
+        src: "/img/protein-icon.png",
       },
       {
         id: 2,
         value: `${data.data.keyData.carbohydrateCount}g`,
         text: "Glucides",
-        icon: "/img/carbs-icon.png",
+        src: "/img/carbs-icon.png",
       },
       {
         id: 3,
         value: `${data.data.keyData.lipidCount}g`,
         text: "Lipides",
-        icon: "/img/fat-icon.png",
+        src: "/img/fat-icon.png",
       },
     ];
   } catch (err) {

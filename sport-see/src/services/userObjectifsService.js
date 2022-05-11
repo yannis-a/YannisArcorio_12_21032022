@@ -1,5 +1,10 @@
 import { getUserAverageSessions } from "./dataService.js";
 
+/**
+ * format objectif data 
+ * @param {int} id 
+ * @returns formatted data
+ */
 export async function getObjectifsData(id) {
   let res = [];
 

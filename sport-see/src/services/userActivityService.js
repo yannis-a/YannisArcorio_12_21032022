@@ -1,5 +1,10 @@
 import { getUserActivity } from "./dataService.js";
 
+/**
+ * format activity data 
+ * @param {int} id 
+ * @returns formatted data
+ */
 export async function getActivityData(id) {
   let res = [];
   try {

@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import Profil from "./pages/Profil";
 import Community from "./pages/Community";
-import NotFound from "./pages/NotFound";
+import Error from "./pages/Error";
 import Menu from "./components/Menu";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/user/:id" element={<Profil />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </div>
   );

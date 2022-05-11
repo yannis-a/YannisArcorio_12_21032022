@@ -1,5 +1,10 @@
 import { getUserMainData } from "../services/dataService.js";
 
+/**
+ * format user informations data 
+ * @param {int} id 
+ * @returns formatted data
+ */
 export async function getUserInformation(id) {
   let res;
   try {

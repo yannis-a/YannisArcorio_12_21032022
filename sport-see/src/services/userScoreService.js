@@ -1,5 +1,10 @@
 import { getUserMainData } from "./dataService.js";
 
+/**
+ * format score data 
+ * @param {int} id 
+ * @returns formatted data
+ */
 export async function getScoreData(id) {
   let res = {};
 

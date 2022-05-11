@@ -15,6 +15,25 @@ import {
 } from "./mockData.js";
 
 /**
+ * check if user exist
+ * @param {int} userId
+ * @returns boolean
+ */
+export async function userExist(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_MAIN_DATA, userId);
+  } else {
+    response = {
+      data: USER_MAIN_DATA.filter(
+        (item) => Number(item.id) === Number(userId)
+      )[0],
+    };
+  }
+  return response.data !== undefined;
+}
+
+/**
  * gets the data of user
  * @param {int} userId
  * @returns json object
