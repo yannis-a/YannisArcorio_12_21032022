@@ -8,4 +8,4 @@ export const ROUTE_AVERAGE_SESSIONS = "/user/:userId/average-sessions";
 
 export const ROUTE_PERFORMANCE = "/user/:userId/performance";
 
-export const USE_API = false;
+export const USE_API = true;

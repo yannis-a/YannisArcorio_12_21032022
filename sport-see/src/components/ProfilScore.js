@@ -1,21 +1,29 @@
 import React from "react";
-import { PieChart, Pie } from "recharts";
+import { ResponsiveContainer, PieChart, Pie } from "recharts";
 
 const ProfilScore = ({ data }) => {
-  console.log(data);
   return (
     <div className="score">
-      <PieChart width="100%">
-        <Pie
-          data={data}
-          dataKey="value"
-          cx="50%"
-          cy="50%"
-          innerRadius={100}
-          outerRadius={150}
-          fill="#82ca9d"
-        />
-      </PieChart>
+      <div className="title">Score</div>
+
+      <div className="content">
+        <div className="percent">{data.percent}%</div>
+        <div className="text">de votre objectifs</div>
+      </div>
+      <ResponsiveContainer width="100%">
+        <PieChart>
+          <Pie
+            data={data.score}
+            dataKey="score"
+            innerRadius={90}
+            outerRadius={100}
+            startAngle={90}
+            endAngle={450}
+            strokeWidth="0"
+            cornerRadius={5}
+          />
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 };

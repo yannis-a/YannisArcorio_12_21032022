@@ -65,7 +65,6 @@ const Profil = () => {
       />
     );
   }
-
   return (
     <div className="profil">
       <ProfilHeader data={userData} />

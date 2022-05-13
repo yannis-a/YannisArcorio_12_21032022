@@ -1,8 +1,8 @@
 import { getUserMainData } from "./dataService.js";
 
 /**
- * format score data 
- * @param {int} id 
+ * format score data
+ * @param {int} id
  * @returns formatted data
  */
 export async function getScoreData(id) {
@@ -10,9 +10,21 @@ export async function getScoreData(id) {
 
   try {
     const data = await getUserMainData(id);
+
+    const score = data.data.todayScore ?? data.data.score;
+    const percent = score * 100;
     res = {
-      value: data.data.todayScore ?? data.data.score,
-      label: "de votre objectif",
+      score: [
+        {
+          score: score,
+          fill: "#ff0000",
+        },
+        {
+          score: 1 - score,
+          fill: "#fff",
+        },
+      ],
+      percent: percent,
     };
   } catch (err) {
     console.error(err);

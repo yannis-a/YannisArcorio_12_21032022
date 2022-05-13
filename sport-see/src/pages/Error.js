@@ -3,10 +3,10 @@ import React from "react";
 const Error = ({ title, content }) => {
   return (
     <div className="error">
-      <div className="flex flex-col justify-center items-center">
-        <span className="font-bold">{title}</span>
+      <div>
+        <h1>{title}</h1>
       </div>
-      <span className="font-normal my-8">{content}</span>
+      <span>{content}</span>
     </div>
   );
 };

@@ -16,7 +16,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/user/:id" element={<Profil />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/*" element={<Error />} />
+        <Route path="/*" element={<Error title={"Erreur 404"} content={"La page que vous recherchez est introuvable..."}/>} />
       </Routes>
     </div>
   );

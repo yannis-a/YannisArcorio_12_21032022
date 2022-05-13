@@ -42,7 +42,6 @@ const ProfilActivity = ({ data }) => {
         <BarChart
           data={data}
           barSize={7}
-          Label="coucou"
         >
           <CartesianGrid strokeDasharray="2 1" vertical={false} />
           <XAxis dataKey="day" axisLine={false} tickLine={false} />
@@ -55,8 +54,8 @@ const ProfilActivity = ({ data }) => {
             iconType="circle"
             formatter={FormattedLegend}
           />
-          <Bar dataKey="kilogram" fill="#282D30" />
-          <Bar dataKey="calories" fill="#E60000" />
+          <Bar dataKey="kilogram" fill="#282D30" radius={5}/>
+          <Bar dataKey="calories" fill="#E60000" radius={5}/>
         </BarChart>
       </ResponsiveContainer>
     </div>
