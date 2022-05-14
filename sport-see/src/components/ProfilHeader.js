@@ -1,5 +1,13 @@
 import React from "react";
 
+/**
+ * header of profil page
+ * 
+ * Call from {@link Profile}
+ * 
+ * @param {json} data json formatted according to the specific need of the card
+ * @component
+ */
 const profilHeader = ({ data }) => {
   return (
     <div className="header">

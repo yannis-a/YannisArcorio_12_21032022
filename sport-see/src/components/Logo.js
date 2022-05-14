@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Logo component
+ * 
+ * @component
+ */
 const Logo = () => {
   return (
     <div className="logo">

@@ -1,5 +1,12 @@
 import React from 'react';
 
+/**
+ * Sidebar of menu
+ * 
+ * Call from {@link Profile}
+ * 
+ * @component
+ */
 const Sidebar = () => {
     return (
         <div className='sidebar'>

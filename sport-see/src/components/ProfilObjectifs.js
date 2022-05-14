@@ -1,6 +1,14 @@
 import React from "react";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
+/**
+ * graph of average session
+ * 
+ * Call from {@link Profile}
+ * 
+ * @param {json} data json formatted according to the specific need of the card
+ * @component
+ */
 const ProfilObjectifs = ({ data }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active) {

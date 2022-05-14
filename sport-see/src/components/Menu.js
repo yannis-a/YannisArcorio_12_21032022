@@ -3,6 +3,11 @@ import Navigation from "./Navigation";
 import Logo from "./Logo";
 import Sidebar from "./Sidebar";
 
+/**
+ * Make up the full menu, navigation, logo and sidebar
+ * 
+ * @component
+ */
 const Menu = () => {
   const navData = [
     { url: "/", id: "homePath", title: "Accueil" },

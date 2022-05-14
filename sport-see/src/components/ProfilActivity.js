@@ -10,9 +10,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+
 /**
- *
- * @components
+ * graph of activity
+ * 
+ * Call from {@link Profile}
+ * 
+ * @param {json} data json formatted according to the specific need of the card
+ * @component
  */
 const ProfilActivity = ({ data }) => {
   const CustomTooltip = ({ active, payload }) => {

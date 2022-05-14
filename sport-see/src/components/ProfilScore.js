@@ -1,6 +1,14 @@
 import React from "react";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 
+/**
+ * graph of score
+ * 
+ * Call from {@link Profile}
+ * 
+ * @param {json} data json formatted according to the specific need of the card
+ * @component
+ */
 const ProfilScore = ({ data }) => {
   return (
     <div className="score">

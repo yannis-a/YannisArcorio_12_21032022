@@ -7,6 +7,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+/**
+ * graph of performance
+ * 
+ * Call from {@link Profile}
+ * 
+ * @param {json} data json formatted according to the specific need of the card
+ * @component
+ */
 const ProfilRadar = ({ data }) => {
   return (
     <div className="radar">

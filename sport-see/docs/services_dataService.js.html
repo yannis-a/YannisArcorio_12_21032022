@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: services/dataService.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: services/dataService.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { apiCall } from "./api";
+import {
+  ROUTE_MAIN_DATA,
+  ROUTE_ACTIVITY,
+  ROUTE_AVERAGE_SESSIONS,
+  ROUTE_PERFORMANCE,
+  USE_API,
+} from "./config.js";
+
+import {
+  USER_MAIN_DATA,
+  USER_ACTIVITY,
+  USER_AVERAGE_SESSIONS,
+  USER_PERFORMANCE,
+} from "./mockData.js";
+
+/**
+ * check if user exist
+ * @param {int} userId
+ * @returns boolean
+ */
+export async function userExist(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_MAIN_DATA, userId);
+  } else {
+    response = {
+      data: USER_MAIN_DATA.filter(
+        (item) => Number(item.id) === Number(userId)
+      )[0],
+    };
+  }
+  return response.data !== undefined;
+}
+
+/**
+ * gets the data of user
+ * @param {int} userId
+ * @returns json object
+ */
+export async function getUserMainData(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_MAIN_DATA, userId);
+  } else {
+    response = {
+      data: USER_MAIN_DATA.filter(
+        (item) => Number(item.id) === Number(userId)
+      )[0],
+    };
+  }
+  return response;
+}
+
+/**
+ * gets the data of activity
+ * @param {int} userId
+ * @returns json object
+ */
+export async function getUserActivity(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_ACTIVITY, userId);
+  } else {
+    response = {
+      data: USER_ACTIVITY.filter(
+        (item) => Number(item.userId) === Number(userId)
+      )[0],
+    };
+  }
+  return response;
+}
+
+/**
+ * gets the data of averrage sessions
+ * @param {int} userId
+ * @returns json object
+ */
+export async function getUserAverageSessions(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_AVERAGE_SESSIONS, userId);
+  } else {
+    response = {
+      data: USER_AVERAGE_SESSIONS.filter(
+        (item) => Number(item.userId) === Number(userId)
+      )[0],
+    };
+  }
+  return response;
+}
+
+/**
+ * gets the data of performance
+ * @param {int} userId
+ * @returns json object
+ */
+export async function getUserPerformance(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_PERFORMANCE, userId);
+  } else {
+    response = {
+      data: USER_PERFORMANCE.filter(
+        (item) => Number(item.userId) === Number(userId)
+      )[0],
+    };
+  }
+  return response;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="App.html">App</a></li><li><a href="Community.html">Community</a></li><li><a href="CustomLink.html">CustomLink</a></li><li><a href="Error.html">Error</a></li><li><a href="Home.html">Home</a></li><li><a href="Logo.html">Logo</a></li><li><a href="Menu.html">Menu</a></li><li><a href="Navigation.html">Navigation</a></li><li><a href="NutritionCard.html">NutritionCard</a></li><li><a href="ProfilActivity.html">ProfilActivity</a></li><li><a href="Profile.html">Profile</a></li><li><a href="profilHeader.html">profilHeader</a></li><li><a href="ProfilNutrition.html">ProfilNutrition</a></li><li><a href="ProfilObjectifs.html">ProfilObjectifs</a></li><li><a href="ProfilRadar.html">ProfilRadar</a></li><li><a href="ProfilScore.html">ProfilScore</a></li><li><a href="Settings.html">Settings</a></li><li><a href="Sidebar.html">Sidebar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#apiCall">apiCall</a></li><li><a href="global.html#getActivityData">getActivityData</a></li><li><a href="global.html#getNutritionData">getNutritionData</a></li><li><a href="global.html#getObjectifsData">getObjectifsData</a></li><li><a href="global.html#getRadarData">getRadarData</a></li><li><a href="global.html#getScoreData">getScoreData</a></li><li><a href="global.html#getUserActivity">getUserActivity</a></li><li><a href="global.html#getUserAverageSessions">getUserAverageSessions</a></li><li><a href="global.html#getUserInformation">getUserInformation</a></li><li><a href="global.html#getUserMainData">getUserMainData</a></li><li><a href="global.html#getUserPerformance">getUserPerformance</a></li><li><a href="global.html#HOST">HOST</a></li><li><a href="global.html#ROUTE_ACTIVITY">ROUTE_ACTIVITY</a></li><li><a href="global.html#ROUTE_AVERAGE_SESSIONS">ROUTE_AVERAGE_SESSIONS</a></li><li><a href="global.html#ROUTE_MAIN_DATA">ROUTE_MAIN_DATA</a></li><li><a href="global.html#ROUTE_PERFORMANCE">ROUTE_PERFORMANCE</a></li><li><a href="global.html#USE_API">USE_API</a></li><li><a href="global.html#userExist">userExist</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat May 14 2022 10:41:44 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

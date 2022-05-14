@@ -1,6 +1,12 @@
 import React from "react";
 import CustomLink from "./CustomLink";
 
+/**
+ * management of navigation with links
+ * 
+ * @param {json} navData 
+ * @component
+ */
 const Navigation = ({navData}) => {
   return (
     <div className="navigation">

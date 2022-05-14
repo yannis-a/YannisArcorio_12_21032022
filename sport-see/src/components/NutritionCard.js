@@ -1,5 +1,13 @@
 import React from "react";
 
+/**
+ * Card of nutrition
+ * 
+ * Call from {@link ProfilNutrition}
+ * 
+ * @param {json} data json formatted according to the specific need of the card
+ * @component 
+ */
 const NutritionCard = ({ data }) => {
   return (
     <div className="nutritionCard">
