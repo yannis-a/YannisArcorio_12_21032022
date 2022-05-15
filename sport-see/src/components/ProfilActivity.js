@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   BarChart,
   Bar,
@@ -65,6 +66,13 @@ const ProfilActivity = ({ data }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+ProfilActivity.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default ProfilActivity;

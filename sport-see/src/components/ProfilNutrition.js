@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import NutritionCard from "./NutritionCard";
 
 /**
@@ -15,6 +16,14 @@ const ProfilNutrition = ({ data }) => {
     cards = data.map((d) => <NutritionCard key={d.id} data={d} />);
   }
   return <div className="nutritions">{cards}</div>;
+};
+
+
+ProfilNutrition.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default ProfilNutrition;

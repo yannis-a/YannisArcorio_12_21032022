@@ -1,5 +1,6 @@
 import React from "react";
 import CustomLink from "./CustomLink";
+import PropTypes from "prop-types";
 
 /**
  * management of navigation with links
@@ -21,6 +22,13 @@ const Navigation = ({navData}) => {
       </ul>
     </div>
   );
+};
+
+Navigation.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default Navigation;

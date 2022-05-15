@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ResponsiveContainer, PieChart, Pie } from "recharts";
 
 /**
@@ -34,6 +35,13 @@ const ProfilScore = ({ data }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+ProfilScore.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default ProfilScore;

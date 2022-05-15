@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /**
  * Card of nutrition
@@ -18,6 +19,13 @@ const NutritionCard = ({ data }) => {
       </div>
     </div>
   );
+};
+
+NutritionCard.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default NutritionCard;

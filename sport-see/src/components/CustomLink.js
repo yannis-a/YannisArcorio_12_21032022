@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 /**
@@ -24,6 +25,23 @@ const CustomLink = ({ children, to, ...props }) => {
       </Link>
     </div>
   );
+};
+
+CustomLink.propTypes = {
+  /**
+   * children element of component
+   */
+   children: PropTypes.object.isRequired,
+
+   /**
+   * url of link
+   */
+   to : PropTypes.string.isRequired,
+
+   /**
+   * array of properties of component
+   */
+   props : PropTypes.array
 };
 
 export default CustomLink;

@@ -1,4 +1,7 @@
 
+## prerequisite
+- [NodeJS (**version 12.18**)](https://nodejs.org/en/)
+
 ## Starting the SportSee project
 
 Clone the repository :
@@ -23,9 +26,16 @@ npm run start
 
 ## Starting the API
 
-A l'aide du readme du projet P9-front-end-dashboard/ démarer l'API.
+Using the P9-front-end-dashboard/ project readme, start the API.
 
 
 **API will run on [`http://localhost:3000/`] by default.**
 
 [`http://localhost:3000/`]: http://localhost:3000/
+
+## JsDoc
+Generate the doc :
+```sh
+npm run docs
+```
+**Open `sportsee/docs/index.html` in your browser for view the doc.**

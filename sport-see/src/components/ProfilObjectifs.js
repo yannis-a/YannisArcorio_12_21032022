@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 /**
@@ -54,6 +55,13 @@ const ProfilObjectifs = ({ data }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+ProfilObjectifs.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default ProfilObjectifs;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /**
  * header of profil page
@@ -17,6 +18,13 @@ const profilHeader = ({ data }) => {
       <div>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
     </div>
   );
+};
+
+profilHeader.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default profilHeader;

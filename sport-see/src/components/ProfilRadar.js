@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   Radar,
   RadarChart,
@@ -30,6 +31,13 @@ const ProfilRadar = ({ data }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+ProfilRadar.propTypes = {
+  /**
+   * data formatted
+   */
+  data: PropTypes.object.isRequired
 };
 
 export default ProfilRadar;
