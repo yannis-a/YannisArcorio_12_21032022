@@ -14,11 +14,11 @@ import { getScoreData } from "../services/userScoreService";
 import { getRadarData } from "../services/userRadarService";
 import { getNutritionData } from "../services/userNutritionService";
 import { getObjectifsData } from "../services/userObjectifsService";
-import { userExist } from "../services/dataService";
+import { APIisUp, userExist } from "../services/dataService";
 
 /**
  * Application profile page. Based on url:id parameter to load data
- * 
+ *
  * @component
  */
 const Profile = () => {
@@ -30,37 +30,54 @@ const Profile = () => {
   const [scoreData, setScoreData] = useState({});
   const [nutritionData, setNutritionData] = useState([]);
   const [isExist, setIsExist] = useState(true);
+  const [apiUp, setApiUp] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
-      const isUser = await userExist(id);
+      const apiIsUp = await APIisUp(id);
 
-      if (!isUser) {
-        setIsExist(false);
+      if (apiIsUp) {
+        const isUser = await userExist(id);
+        if (!isUser) {
+          setIsExist(false);
+        } else {
+          getNutritionData(id).then((res) => {
+            setNutritionData(res);
+          });
+          getUserInformation(id).then((res) => {
+            setUserData(res);
+          });
+          getActivityData(id).then((res) => {
+            setActivityData(res);
+          });
+          getScoreData(id).then((res) => {
+            setScoreData(res);
+          });
+          getRadarData(id).then((res) => {
+            setRadarData(res);
+          });
+          getObjectifsData(id).then((res) => {
+            setObjectifsData(res);
+          });
+        }
       } else {
-        getNutritionData(id).then((res) => {
-          setNutritionData(res);
-        });
-        getUserInformation(id).then((res) => {
-          setUserData(res);
-        });
-        getActivityData(id).then((res) => {
-          setActivityData(res);
-        });
-        getScoreData(id).then((res) => {
-          setScoreData(res);
-        });
-        getRadarData(id).then((res) => {
-          setRadarData(res);
-        });
-        getObjectifsData(id).then((res) => {
-          setObjectifsData(res);
-        });
+        setApiUp(false);
       }
     };
 
     getData().catch(console.error);
   }, [id]);
+
+  if (!apiUp) {
+    return (
+      <Error
+        title={"500 INTERNAL SERVER ERROR"}
+        content={
+          "Une erreur interne s'est produite sur le serveur. Il s'agit peut-être d'un incident lié à la demande ou d'un incident lié au code côté serveur. Les informations sur l'erreur se trouvent dans le corps de la réponse."
+        }
+      />
+    );
+  }
 
   if (!isExist) {
     return (
@@ -70,6 +87,7 @@ const Profile = () => {
       />
     );
   }
+
   return (
     <div className="profil">
       <ProfilHeader data={userData} />

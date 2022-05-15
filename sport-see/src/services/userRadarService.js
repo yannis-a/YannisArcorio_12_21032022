@@ -3,7 +3,7 @@ import { getUserPerformance } from "./dataService.js";
 
 /**
  * format radar chart data 
- * @param {int} id 
+ * @param {number} id 
  * @returns formatted data
  */
 export async function getRadarData(id) {

@@ -31,7 +31,7 @@ CustomLink.propTypes = {
   /**
    * children element of component
    */
-   children: PropTypes.object.isRequired,
+   children: PropTypes.string.isRequired,
 
    /**
    * url of link

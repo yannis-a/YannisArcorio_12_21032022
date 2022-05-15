@@ -28,7 +28,7 @@ Navigation.propTypes = {
   /**
    * data formatted
    */
-  data: PropTypes.object.isRequired
+  data: PropTypes.object
 };
 
 export default Navigation;

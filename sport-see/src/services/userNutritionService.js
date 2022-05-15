@@ -2,7 +2,7 @@ import { getUserMainData } from "../services/dataService.js";
 
 /**
  * format nutrition data 
- * @param {int} id 
+ * @param {number} id 
  * @returns formatted data
  */
 export async function getNutritionData(id) {

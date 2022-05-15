@@ -2,7 +2,7 @@ import { getUserActivity } from "./dataService.js";
 
 /**
  * format activity data 
- * @param {int} id 
+ * @param {number} id 
  * @returns formatted data
  */
 export async function getActivityData(id) {

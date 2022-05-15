@@ -15,8 +15,24 @@ import {
 } from "./mockData.js";
 
 /**
+ * check if api is up
+ * @param {number} userId 
+ * @returns boolean
+ */
+export async function APIisUp(userId) {
+  let response;
+  if (USE_API) {
+    response = await apiCall(ROUTE_MAIN_DATA, userId);
+  } else {
+    response = {};
+  }
+
+  return response !== undefined;
+}
+
+/**
  * check if user exist
- * @param {int} userId
+ * @param {number} userId
  * @returns boolean
  */
 export async function userExist(userId) {
@@ -30,12 +46,13 @@ export async function userExist(userId) {
       )[0],
     };
   }
+
   return response.data !== undefined;
 }
 
 /**
  * gets the data of user
- * @param {int} userId
+ * @param {number} userId
  * @returns json object
  */
 export async function getUserMainData(userId) {
@@ -54,7 +71,7 @@ export async function getUserMainData(userId) {
 
 /**
  * gets the data of activity
- * @param {int} userId
+ * @param {number} userId
  * @returns json object
  */
 export async function getUserActivity(userId) {
@@ -73,7 +90,7 @@ export async function getUserActivity(userId) {
 
 /**
  * gets the data of averrage sessions
- * @param {int} userId
+ * @param {number} userId
  * @returns json object
  */
 export async function getUserAverageSessions(userId) {
@@ -92,7 +109,7 @@ export async function getUserAverageSessions(userId) {
 
 /**
  * gets the data of performance
- * @param {int} userId
+ * @param {number} userId
  * @returns json object
  */
 export async function getUserPerformance(userId) {

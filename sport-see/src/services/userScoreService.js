@@ -2,7 +2,7 @@ import { getUserMainData } from "./dataService.js";
 
 /**
  * format score data
- * @param {int} id
+ * @param {number} id
  * @returns formatted data
  */
 export async function getScoreData(id) {

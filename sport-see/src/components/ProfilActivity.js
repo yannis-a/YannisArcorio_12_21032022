@@ -72,7 +72,7 @@ ProfilActivity.propTypes = {
   /**
    * data formatted
    */
-  data: PropTypes.object.isRequired
+  data: PropTypes.array.isRequired
 };
 
 export default ProfilActivity;
