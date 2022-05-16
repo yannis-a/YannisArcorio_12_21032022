@@ -14,7 +14,7 @@ import { getScoreData } from "../services/userScoreService";
 import { getRadarData } from "../services/userRadarService";
 import { getNutritionData } from "../services/userNutritionService";
 import { getObjectifsData } from "../services/userObjectifsService";
-import { APIisUp, userExist } from "../services/dataService";
+import { userExist } from "../services/dataService";
 
 /**
  * Application profile page. Based on url:id parameter to load data
@@ -31,13 +31,13 @@ const Profile = () => {
   const [nutritionData, setNutritionData] = useState([]);
   const [isExist, setIsExist] = useState(true);
   const [apiUp, setApiUp] = useState(true);
+  const [isLoad, setIsLoad] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
-      const apiIsUp = await APIisUp(id);
-
-      if (apiIsUp) {
+      try {
         const isUser = await userExist(id);
+        console.log(isUser);
         if (!isUser) {
           setIsExist(false);
         } else {
@@ -59,8 +59,10 @@ const Profile = () => {
           getObjectifsData(id).then((res) => {
             setObjectifsData(res);
           });
+
+          setIsLoad(true);
         }
-      } else {
+      } catch {
         setApiUp(false);
       }
     };
@@ -83,7 +85,16 @@ const Profile = () => {
     return (
       <Error
         title={"Profil inconnu"}
-        content={"La profil que vous recherchez n'existe pas..."}
+        content={"Le profil que vous recherchez n'existe pas..."}
+      />
+    );
+  }
+
+  if (!isLoad) {
+    return (
+      <Error
+        title={"Chargement du profil"}
+        content={"veuillez patienter un instant..."}
       />
     );
   }

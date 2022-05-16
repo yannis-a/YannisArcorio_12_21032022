@@ -13,7 +13,7 @@ export async function apiCall(route, userId) {
     response = await fetch(HOST + route);
     return response.json();
   } catch (error) {
-    console.log(
+    console.error(
       "Il y a eu un problème avec l'opération fetch: " + error.message
     );
   }
