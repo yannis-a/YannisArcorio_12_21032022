@@ -40,7 +40,9 @@ export async function getActivityData(id) {
     const data = await getData(id, ROUTE_ACTIVITY, USER_ACTIVITY);
     data.data.sessions.map((activity) => {
       return res.push({
-        ...activity,
+        kilogram : activity.kilogram,
+        calories : activity.calories,
+        day: new Date(activity.day).getDate()
       });
     });
   } catch (err) {
