@@ -8,12 +8,12 @@ import ProfilNutrition from "../components/ProfilNutrition";
 import Error from "./Error";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getUserInformation } from "../services/userInfoService";
-import { getActivityData } from "../services/userActivityService";
-import { getScoreData } from "../services/userScoreService";
-import { getRadarData } from "../services/userRadarService";
-import { getNutritionData } from "../services/userNutritionService";
-import { getObjectifsData } from "../services/userObjectifsService";
+import { getUserInformation } from "../services/userService";
+import { getActivityData } from "../services/userService";
+import { getScoreData } from "../services/userService";
+import { getRadarData } from "../services/userService";
+import { getNutritionData } from "../services/userService";
+import { getObjectifsData } from "../services/userService";
 import { userExist } from "../services/dataService";
 
 /**
