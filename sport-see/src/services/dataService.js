@@ -1,16 +1,11 @@
 import { apiCall } from "./api";
-import {
-  ROUTE_MAIN_DATA,
-  USE_API,
-} from "./config.js";
+import { ROUTE_MAIN_DATA, USE_API } from "./config.js";
 
-import {
-  USER_MAIN_DATA
-} from "./mockData.js";
+import { USER_MAIN_DATA } from "./mockData.js";
 
 /**
  * check if api is up
- * @param {number} userId 
+ * @param {number} userId
  * @returns boolean
  */
 export async function APIisUp(userId) {
@@ -56,11 +51,17 @@ export async function getData(userId, path, mockData) {
   if (USE_API) {
     response = await apiCall(path, userId);
   } else {
+    console.log(mockData);
     response = {
-      data: mockData.filter(
-        (item) => Number(item.id) === Number(userId)
-      )[0],
+      data: mockData.filter((item) => {
+        if (item.id) {
+          return Number(item.id) === Number(userId);
+        } else {
+          return Number(item.userId) === Number(userId);
+        }
+      })[0],
     };
   }
+  console.log(response);
   return response;
 }

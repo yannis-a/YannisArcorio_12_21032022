@@ -23,4 +23,4 @@ export const ROUTE_PERFORMANCE = "/user/:userId/performance";
 /**
  * boolean to uses api data
  */
-export const USE_API = true;
+export const USE_API = false;
