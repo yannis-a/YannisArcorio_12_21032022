@@ -37,7 +37,6 @@ const Profile = () => {
     const getData = async () => {
       try {
         const isUser = await userExist(id);
-        console.log(isUser);
         if (!isUser) {
           setIsExist(false);
         } else {
