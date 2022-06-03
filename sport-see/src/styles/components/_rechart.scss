@@ -24,6 +24,7 @@
 
     @media screen and (max-width: 1200px) {
         height: 200px;
+        margin: 10px 10px 0 0;
     }
 
     & div svg {
@@ -52,6 +53,7 @@
 
     @media screen and (max-width: 1200px) {
         height: 200px;
+        margin: 10px 10px 0 0;
     }
 
     & div svg {
@@ -66,6 +68,12 @@
         z-index: 1;
         left: 15%;
         font-size: medium;
+
+        @media screen and (max-width: 1200px) {
+            top: 10px;
+            left: 4%;
+            font-size: small;
+        }
     }
 
     & .content {
@@ -95,11 +103,13 @@
 
     @media screen and (max-width: 1200px) {
         height: 200px;
+        margin: 10px 10px 0 0;
     }
 
     & div svg {
         background-color: #282d30;
         border-radius: 5px;
         color: white;
+        padding: 5px;
     }
 }

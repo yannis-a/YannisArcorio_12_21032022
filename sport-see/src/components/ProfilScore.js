@@ -24,8 +24,8 @@ const ProfilScore = ({ data }) => {
           <Pie
             data={data.score}
             dataKey="score"
-            innerRadius={90}
-            outerRadius={100}
+            innerRadius={75}
+            outerRadius={85}
             startAngle={90}
             endAngle={450}
             strokeWidth="0"
